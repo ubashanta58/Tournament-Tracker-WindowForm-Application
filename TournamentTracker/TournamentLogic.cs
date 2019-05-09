@@ -197,12 +197,21 @@ namespace TournamentTracker
         /// <returns></returns>
         private static int NumberOfByes(int rounds, int numberOfTeams)
         {
-            int output = 0;
-            int totalTeams = 1;
 
-            for(int i = 1; i <= rounds; i++)
+            //if (numberOfTeams % 2 == 0)
+            //{
+            //    return 0;
+            //}
+            //else
+            //{
+            //  return numberOfTeams % 2;
+            //}
+            int output = 0;
+            int totalTeams = 0;
+
+            for (int i = 1; i <= rounds; i++)
             {
-                totalTeams *= 2;
+                totalTeams += 2;
             }
 
             output = totalTeams - numberOfTeams;

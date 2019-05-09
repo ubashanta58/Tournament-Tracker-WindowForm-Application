@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
 
             // initialize the database connection
-            TournamentTracker.GlobalConfig.InitializeConnections(DatabaseType.TextFile);
+            TournamentTracker.GlobalConfig.InitializeConnections(DatabaseType.Sql);
 
             Application.Run(new TournamentDashboardForm());
              //Application.Run(new CreateTeamForm());
