@@ -1,0 +1,9 @@
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\bin\Debug\TournamentTracker.dll
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\bin\Debug\TournamentTracker.pdb
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\bin\Debug\Dapper.dll
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\bin\Debug\Dapper.xml
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\obj\Debug\TrackerLibrary.csprojAssemblyReference.cache
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\obj\Debug\TrackerLibrary.csproj.CoreCompileInputs.cache
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\obj\Debug\TrackerLibrary.csproj.CopyComplete
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\obj\Debug\TournamentTracker.dll
+D:\2019,4th semester\project practice\TournamentTracker\TrackerLibrary\TournamentTracker\obj\Debug\TournamentTracker.pdb
