@@ -29,6 +29,10 @@ namespace TournamentTracker
             CreateOtherRounds(model, rounds);
         }
 
+        /// <summary>
+        /// fuction is created for the update of the tournaments rounds after completing each rounds.
+        /// </summary>
+        /// <param name="model"></param>
         public static void UpdateTournamentResults(TournamentModel model)
         {
             List<MatchupModel> toScore = new List<MatchupModel>();
@@ -51,6 +55,12 @@ namespace TournamentTracker
             toScore.ForEach(x => GlobalConfig.Connection.UpdateMatchup(x));
         }
 
+
+        /// <summary>
+        /// function job is to find the advance winner and place to next round.
+        /// </summary>
+        /// <param name="models"></param>
+        /// <param name="tournament"></param>
         private static void AdvanceWinners(List<MatchupModel> models, TournamentModel tournament)
         {
             foreach (MatchupModel m in models)
@@ -75,6 +85,10 @@ namespace TournamentTracker
             }
         }
 
+        /// <summary>
+        /// function job is to mark the winnerf of the each round and then schedule them for the next round.
+        /// </summary>
+        /// <param name="models"></param>
         private static void MarkWinnerInMatchups(List<MatchupModel> models)
         {
             // greater or lesser
