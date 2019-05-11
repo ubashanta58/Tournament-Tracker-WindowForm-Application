@@ -10,6 +10,22 @@ namespace TournamentTracker.DataAccess
 {
     public class TextConnector : IDataConnection
     {
+        public void CompleteTournament(TournamentModel model)
+        {
+            List<TournamentModel> tournaments = GlobalConfig.TournamentFile.FullFilePath()
+                 .LoadFile()
+                 .ConvertToTournamentModels();
+
+
+            //tournaments.SaveRoundsToFile(model, MatchupFile, MatchupEntryFile);
+
+            tournaments.Remove(model);
+
+            tournaments.SaveToTournamentFile();
+
+            TournamentLogic.UpdateTournamentResults(model);
+        }
+
         /// <summary>
         /// add a data in the PersonModel.csv
         /// </summary>
