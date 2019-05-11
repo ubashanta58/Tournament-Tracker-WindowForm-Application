@@ -174,7 +174,7 @@ namespace TournamentTracker.DataAccess.TextHelpers
 
                       foreach (string id in prizeIds)
                       {
-                    tm.Prizes.Add(prizes.Where(x => x.Id == int.Parse(id)).First());
+                           tm.Prizes.Add(prizes.Where(x => x.Id == int.Parse(id)).First());
                       }
                 }
 
@@ -416,6 +416,10 @@ namespace TournamentTracker.DataAccess.TextHelpers
 
         }
 
+        /// <summary>
+        /// funtion job is to update the corresponding matchups of the tournaments teams to fiel.
+        /// </summary>
+        /// <param name="matchup"></param>
         public static void UpdateMatchupToFile(this MatchupModel matchup)
         {
             List<MatchupModel> matchups = GlobalConfig.MatchupFile.FullFilePath().LoadFile().ConvertToMatchupModels();
@@ -462,7 +466,7 @@ namespace TournamentTracker.DataAccess.TextHelpers
         /// <param name="matchupEntryFile"></param>
         public static void SaveEntryToFile(this MatchupEntryModel entry)
         {
-            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels();  //i changed matchupentryfile from matchup.
+            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels(); 
             int currentId = 1;
 
             if (entries.Count > 0)
@@ -496,7 +500,7 @@ namespace TournamentTracker.DataAccess.TextHelpers
 
         public static void UpdateEntryToFile(this MatchupEntryModel entry)
         {
-            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels();  //i changed matchupentryfile from matchup.
+            List<MatchupEntryModel> entries = GlobalConfig.MatchupEntryFile.FullFilePath().LoadFile().ConvertToMatchupEntryModels(); 
 
             MatchupEntryModel oldEntry = new MatchupEntryModel();
 

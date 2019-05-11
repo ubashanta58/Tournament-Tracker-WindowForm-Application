@@ -28,6 +28,7 @@ namespace TournamentTracker.DataAccess
             {
                 currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
             }
+
             model.Id = currentId;
 
             //Add the new record with the new ID(max +1)
@@ -84,6 +85,7 @@ namespace TournamentTracker.DataAccess
             {
                 currentId = teams.OrderByDescending(x => x.Id).First().Id + 1;
             }
+
             model.Id = currentId;
 
 
