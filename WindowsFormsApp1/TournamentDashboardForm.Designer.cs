@@ -53,9 +53,9 @@
             this.loadExistingDashBoardlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.loadExistingDashBoardlabel.Location = new System.Drawing.Point(109, 62);
             this.loadExistingDashBoardlabel.Name = "loadExistingDashBoardlabel";
-            this.loadExistingDashBoardlabel.Size = new System.Drawing.Size(311, 37);
+            this.loadExistingDashBoardlabel.Size = new System.Drawing.Size(322, 37);
             this.loadExistingDashBoardlabel.TabIndex = 6;
-            this.loadExistingDashBoardlabel.Text = "Load Existing Dashboard";
+            this.loadExistingDashBoardlabel.Text = "Load Existing Tournament";
             // 
             // loadExistingDashBoardDropBox
             // 

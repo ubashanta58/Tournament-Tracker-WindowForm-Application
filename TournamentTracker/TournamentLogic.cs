@@ -388,11 +388,11 @@ namespace TournamentTracker
             //  return numberOfTeams % 2;
             //}
             int output = 0;
-            int totalTeams = 0;
+            int totalTeams = 1;
 
             for (int i = 1; i <= rounds; i++)
             {
-                totalTeams += 2;
+                totalTeams *= 2;
             }
 
             output = totalTeams - numberOfTeams;
@@ -407,16 +407,29 @@ namespace TournamentTracker
         /// <returns></returns>
         private static int FindNumberOfRounds(int teamCount)
         {
+            //int x = teamCount / 2;
+
+            //var y = teamCount % 2;
+
+            //if (y == 0)
+            //{
+            //    return x;
+            //}
+            //else
+            //    return x + y;
+
+
+
             int output = 1;
             int val = 2;
 
-            while(val < teamCount)
+            while (val < teamCount)
             {
 
                 output += 1;
 
                 val *= 2;
-                    
+
             }
 
             return output;

@@ -24,11 +24,18 @@ namespace WindowsFormsApp1
 
             tournament = tournamentModel;
 
+            tournament.OnTournamentComplete += Tournament_OnTournamentComplete;
+
             WireUpLists();
 
             LoadFormData();
 
             LoadRounds();
+        }
+
+        private void Tournament_OnTournamentComplete(object sender, DateTime e)
+        {
+            this.Close();
         }
 
         private void unPlayedcheckBox_CheckedChanged(object sender, EventArgs e)
@@ -176,10 +183,47 @@ namespace WindowsFormsApp1
             LoadMatchup((MatchupModel)matchupListBox.SelectedItem);
         }
 
+        private string ValidateData()
+        {
+            string output = "";
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+            bool scoreoneValid = double.TryParse(firstTeamScoretextBox.Text, out teamOneScore);
+            bool scoretwoValid = double.TryParse(textBox2.Text, out teamTwoScore);
+
+            if (!scoreoneValid)
+            {
+                output = "The Score One value is not valid.";
+            }
+
+            else if (!scoretwoValid)
+            {
+                output = "The Score Two value is not valid.";
+            }
+
+            else if (teamOneScore == 0 && teamTwoScore== 0)
+            {
+                output = "You did not enter a score for either team.";
+            }
+
+            else if (teamOneScore == teamTwoScore)
+            {
+                output = "We do not allows ties in this application.";
+            }
+
+            return output;
+        }
+
         private void scorebutton_Click(object sender, EventArgs e)
         {
+            string errorMessage = ValidateData();
+            if (errorMessage.Length > 0)
+            {
+                MessageBox.Show($"Input Error: { errorMessage }");
+                return;
+            }
             MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
-            int x = m.Entries.Count;
+            //int x = m.Entries.Count;
             double teamOneScore = 0;
             double teamTwoScore = 0;
 
@@ -223,7 +267,16 @@ namespace WindowsFormsApp1
                 }
             }
 
-            TournamentLogic.UpdateTournamentResults(tournament);
+            try
+            {
+
+                TournamentLogic.UpdateTournamentResults(tournament);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"The application had the following error: { ex.Message }");
+                return;
+            }
 
             LoadMatchups((int)roundDropBox.SelectedItem);
         }
